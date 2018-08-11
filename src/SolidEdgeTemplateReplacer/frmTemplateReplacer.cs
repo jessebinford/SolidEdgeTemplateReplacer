@@ -20,7 +20,15 @@ namespace SolidEdgeTemplateReplacer
         private void Form1_Load(object sender, EventArgs e)
         {
             CustomEvents.ProgressChanged += CustomEvents_ProgressChanged;
-            seVersionLabel.Text += SolidEdgeUtils.GetVersion();
+            
+            try
+            {
+                seVersionLabel.Text += SolidEdgeUtils.GetVersion();
+            }
+            catch
+            {
+                seVersionLabel.Text += "ERROR";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
