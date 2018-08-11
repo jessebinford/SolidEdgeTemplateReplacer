@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,21 +44,41 @@ namespace SolidEdgeTemplateReplacer
                     return;
                 }
 
-                using (SEDocument _targetDoc = new SEDocument(targetFileTextbox.Text, false, false))
-                using (SEDocument _templateDoc = new SEDocument(templateFileTextBox.Text, !leaveTempOpenChkBox.Checked, false))
+                if (seecRadio.Checked)
                 {
-                    try
+                    using (SEDocument _targetDoc = new SEDocument(string.Empty, false, false))
+                    using (SEDocument _templateDoc = new SEDocument(string.Empty, !leaveTempOpenChkBox.Checked, false) { ItemID = itemIDTxtbox.Text, RevID = revTxtbox.Text})
                     {
-                        _ac.ProcessDocuments(_targetDoc, _templateDoc);
+                        try
+                        {
+                            _ac.ProcessSeecDocuments(_targetDoc, _templateDoc);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error!\r\n\r\n{ex.Message}");
+                        }
                     }
-                    catch (Exception ex)
+                }
+
+                if (unmanagedRadio.Checked)
+                {
+                    using (SEDocument _targetDoc = new SEDocument(targetFileTextbox.Text, false, false))
+                    using (SEDocument _templateDoc = new SEDocument(templateFileTextBox.Text, !leaveTempOpenChkBox.Checked, false))
                     {
-                        MessageBox.Show($"Error!\r\n\r\n{ex.Message}");
+                        try
+                        {
+                            _ac.ProcessUnmanagedDocuments(_targetDoc, _templateDoc);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error!\r\n\r\n{ex.Message}");
+                        }
                     }
                 }
 
                 CustomEvents.OnProgressChanged("Finished!");
 
+                _ac.SEApplication.DisplayAlerts = true;
             }
 
             MessageBox.Show("Done");
@@ -73,9 +92,21 @@ namespace SolidEdgeTemplateReplacer
                 return false;
             }
 
-            if (!isFileValid(templateFileTextBox.Text))
+            if (!isFileValid(templateFileTextBox.Text) && unmanagedRadio.Checked)
             {
                 MessageBox.Show("Invalid Template file path!");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(itemIDTxtbox.Text) && seecRadio.Checked)
+            {
+                MessageBox.Show("You must provide an ItemID for the template!");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(revTxtbox.Text) && seecRadio.Checked)
+            {
+                MessageBox.Show("You must provide a Rev for the template!");
                 return false;
             }
 
@@ -152,6 +183,21 @@ namespace SolidEdgeTemplateReplacer
             targetFileTextbox.Enabled = !fileAlreadyOpenChkBox.Checked;
             targetFileTextbox.Text = "";
             targetFileBtn.Enabled = !fileAlreadyOpenChkBox.Checked;
+        }
+
+        private void seecRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            templateFileTextBox.Visible = !seecRadio.Checked;
+            templateFileBtn.Visible = !seecRadio.Checked;
+            itemIDLbl.Visible = seecRadio.Checked;
+            itemIDTxtbox.Visible = seecRadio.Checked;
+            revLbl.Visible = seecRadio.Checked;
+            revTxtbox.Visible = seecRadio.Checked;
+            fileAlreadyOpenChkBox.Enabled = !seecRadio.Checked;
+            if (seecRadio.Checked)
+            {
+                fileAlreadyOpenChkBox.Checked = true;
+            }
         }
     }
 }

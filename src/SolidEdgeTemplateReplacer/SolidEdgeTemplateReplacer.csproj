@@ -40,15 +40,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomEvents.cs" />
@@ -73,18 +67,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SEDocument.cs" />
+    <Compile Include="SEECController.cs" />
     <Compile Include="SheetReplacement.cs" />
     <Compile Include="SolidEdgeApplicationController.cs" />
     <Compile Include="SolidEdgeDocumentController.cs" />
     <Compile Include="SolidEdgeSheetController.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>frmTemplateReplacer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmOpenFilePicker.resx">
       <DependentUpon>frmOpenFilePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSheetReplacerPicker.resx">
       <DependentUpon>frmSheetReplacerPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplateReplacer.resx">
+      <DependentUpon>frmTemplateReplacer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,9 +90,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="License.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

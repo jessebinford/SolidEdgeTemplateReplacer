@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using SolidEdgeDraft;
 using SolidEdgeFramework;
 
@@ -19,14 +16,26 @@ namespace SolidEdgeTemplateReplacer
             _saveDocOnClose = SaveDocOnClose;
         }
 
+        // Full file path to the underlining file
         public string FullFilePath { get; set; }
+
+        // File name
         public string FileName { get; set; }
 
+        // Used for SEEC Mode
+        internal string ItemID { get; set; }
+
+        // Used for SEEC Mode
+        internal string RevID { get; set; }
+
+        // Used for display purposes in a couple screens
         public string CombinedListingName
         {
             get { return $"File: {FileName}   |   File Path: {FullFilePath}"; }
         }
+        
         internal SolidEdgeDocument SEDocumentInstance { get; set; }
+
         internal List<Sheet> BackgroundDocumentSheets { get; set; }
 
         private bool _closeOnDispose;
@@ -36,6 +45,8 @@ namespace SolidEdgeTemplateReplacer
         {
             if (SEDocumentInstance != null)
             {
+
+                // Dispose Sheets
                 if (BackgroundDocumentSheets.Count > 0)
                 {
                     BackgroundDocumentSheets.ForEach((Sheet _sheet) =>
@@ -46,7 +57,9 @@ namespace SolidEdgeTemplateReplacer
                         }
                     });
                 }
+                BackgroundDocumentSheets.Clear();
 
+                // Close Doc?
                 if (_closeOnDispose)
                 {
                     SEDocumentInstance.Close(SaveChanges: _saveDocOnClose);
@@ -54,7 +67,6 @@ namespace SolidEdgeTemplateReplacer
 
                 Marshal.ReleaseComObject(SEDocumentInstance);
             }
-            BackgroundDocumentSheets.Clear();
             
         }
     }

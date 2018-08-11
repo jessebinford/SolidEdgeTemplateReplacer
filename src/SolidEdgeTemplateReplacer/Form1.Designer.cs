@@ -46,9 +46,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.clearLogChkbox = new System.Windows.Forms.CheckBox();
+            this.unmanagedRadio = new System.Windows.Forms.RadioButton();
+            this.seecRadio = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.itemIDLbl = new System.Windows.Forms.Label();
+            this.revLbl = new System.Windows.Forms.Label();
+            this.itemIDTxtbox = new System.Windows.Forms.TextBox();
+            this.revTxtbox = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -97,7 +105,7 @@
             this.button1.Location = new System.Drawing.Point(37, 241);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(347, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Go";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -105,25 +113,25 @@
             // fileAlreadyOpenChkBox
             // 
             this.fileAlreadyOpenChkBox.AutoSize = true;
-            this.fileAlreadyOpenChkBox.Location = new System.Drawing.Point(106, 88);
+            this.fileAlreadyOpenChkBox.Location = new System.Drawing.Point(106, 112);
             this.fileAlreadyOpenChkBox.Name = "fileAlreadyOpenChkBox";
             this.fileAlreadyOpenChkBox.Size = new System.Drawing.Size(144, 17);
-            this.fileAlreadyOpenChkBox.TabIndex = 3;
+            this.fileAlreadyOpenChkBox.TabIndex = 5;
             this.fileAlreadyOpenChkBox.Text = "Pick from Open SE Docs";
             this.fileAlreadyOpenChkBox.UseVisualStyleBackColor = true;
             this.fileAlreadyOpenChkBox.CheckedChanged += new System.EventHandler(this.fileAlreadyOpenChkBox_CheckedChanged);
             // 
             // targetFileTextbox
             // 
-            this.targetFileTextbox.Location = new System.Drawing.Point(106, 62);
+            this.targetFileTextbox.Location = new System.Drawing.Point(106, 86);
             this.targetFileTextbox.Name = "targetFileTextbox";
             this.targetFileTextbox.Size = new System.Drawing.Size(213, 20);
-            this.targetFileTextbox.TabIndex = 4;
+            this.targetFileTextbox.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 65);
+            this.label1.Location = new System.Drawing.Point(40, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 5;
@@ -132,11 +140,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 138);
+            this.label2.Location = new System.Drawing.Point(46, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Template File:";
+            this.label2.Text = "Template:";
             // 
             // templateFileTextBox
             // 
@@ -147,10 +155,10 @@
             // 
             // targetFileBtn
             // 
-            this.targetFileBtn.Location = new System.Drawing.Point(325, 60);
+            this.targetFileBtn.Location = new System.Drawing.Point(325, 84);
             this.targetFileBtn.Name = "targetFileBtn";
             this.targetFileBtn.Size = new System.Drawing.Size(52, 23);
-            this.targetFileBtn.TabIndex = 8;
+            this.targetFileBtn.TabIndex = 4;
             this.targetFileBtn.Text = "Browse";
             this.targetFileBtn.UseVisualStyleBackColor = true;
             this.targetFileBtn.Click += new System.EventHandler(this.targetFileBtn_Click);
@@ -160,7 +168,7 @@
             this.templateFileBtn.Location = new System.Drawing.Point(325, 133);
             this.templateFileBtn.Name = "templateFileBtn";
             this.templateFileBtn.Size = new System.Drawing.Size(52, 23);
-            this.templateFileBtn.TabIndex = 9;
+            this.templateFileBtn.TabIndex = 10;
             this.templateFileBtn.Text = "Browse";
             this.templateFileBtn.UseVisualStyleBackColor = true;
             this.templateFileBtn.Click += new System.EventHandler(this.templateFileBtn_Click);
@@ -171,7 +179,7 @@
             this.leaveTempOpenChkBox.Location = new System.Drawing.Point(106, 184);
             this.leaveTempOpenChkBox.Name = "leaveTempOpenChkBox";
             this.leaveTempOpenChkBox.Size = new System.Drawing.Size(157, 17);
-            this.leaveTempOpenChkBox.TabIndex = 10;
+            this.leaveTempOpenChkBox.TabIndex = 12;
             this.leaveTempOpenChkBox.Text = "Leave Template Open After";
             this.leaveTempOpenChkBox.UseVisualStyleBackColor = true;
             // 
@@ -206,7 +214,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(394, 85);
-            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.TabIndex = 100;
             this.richTextBox1.Text = "";
             // 
             // clearLogChkbox
@@ -219,11 +227,86 @@
             this.clearLogChkbox.Text = "Clear Log on Run";
             this.clearLogChkbox.UseVisualStyleBackColor = true;
             // 
+            // unmanagedRadio
+            // 
+            this.unmanagedRadio.AutoSize = true;
+            this.unmanagedRadio.Checked = true;
+            this.unmanagedRadio.Location = new System.Drawing.Point(94, 16);
+            this.unmanagedRadio.Name = "unmanagedRadio";
+            this.unmanagedRadio.Size = new System.Drawing.Size(83, 17);
+            this.unmanagedRadio.TabIndex = 1;
+            this.unmanagedRadio.TabStop = true;
+            this.unmanagedRadio.Text = "Unmanaged";
+            this.unmanagedRadio.UseVisualStyleBackColor = true;
+            // 
+            // seecRadio
+            // 
+            this.seecRadio.AutoSize = true;
+            this.seecRadio.Location = new System.Drawing.Point(185, 16);
+            this.seecRadio.Name = "seecRadio";
+            this.seecRadio.Size = new System.Drawing.Size(53, 17);
+            this.seecRadio.TabIndex = 2;
+            this.seecRadio.Text = "SEEC";
+            this.seecRadio.UseVisualStyleBackColor = true;
+            this.seecRadio.CheckedChanged += new System.EventHandler(this.seecRadio_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.unmanagedRadio);
+            this.groupBox2.Controls.Add(this.seecRadio);
+            this.groupBox2.Location = new System.Drawing.Point(30, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(364, 39);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "SE Mode";
+            // 
+            // itemIDLbl
+            // 
+            this.itemIDLbl.AutoSize = true;
+            this.itemIDLbl.Location = new System.Drawing.Point(106, 138);
+            this.itemIDLbl.Name = "itemIDLbl";
+            this.itemIDLbl.Size = new System.Drawing.Size(44, 13);
+            this.itemIDLbl.TabIndex = 17;
+            this.itemIDLbl.Text = "Item ID:";
+            this.itemIDLbl.Visible = false;
+            // 
+            // revLbl
+            // 
+            this.revLbl.AutoSize = true;
+            this.revLbl.Location = new System.Drawing.Point(278, 138);
+            this.revLbl.Name = "revLbl";
+            this.revLbl.Size = new System.Drawing.Size(30, 13);
+            this.revLbl.TabIndex = 18;
+            this.revLbl.Text = "Rev:";
+            this.revLbl.Visible = false;
+            // 
+            // itemIDTxtbox
+            // 
+            this.itemIDTxtbox.Location = new System.Drawing.Point(156, 135);
+            this.itemIDTxtbox.Name = "itemIDTxtbox";
+            this.itemIDTxtbox.Size = new System.Drawing.Size(114, 20);
+            this.itemIDTxtbox.TabIndex = 7;
+            this.itemIDTxtbox.Visible = false;
+            // 
+            // revTxtbox
+            // 
+            this.revTxtbox.Location = new System.Drawing.Point(314, 135);
+            this.revTxtbox.Name = "revTxtbox";
+            this.revTxtbox.Size = new System.Drawing.Size(48, 20);
+            this.revTxtbox.TabIndex = 8;
+            this.revTxtbox.Visible = false;
+            // 
             // frmTemplateReplacer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 430);
+            this.Controls.Add(this.revTxtbox);
+            this.Controls.Add(this.itemIDTxtbox);
+            this.Controls.Add(this.revLbl);
+            this.Controls.Add(this.itemIDLbl);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.clearLogChkbox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBox3);
@@ -248,6 +331,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +358,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.CheckBox clearLogChkbox;
+        private System.Windows.Forms.RadioButton unmanagedRadio;
+        private System.Windows.Forms.RadioButton seecRadio;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label itemIDLbl;
+        private System.Windows.Forms.Label revLbl;
+        private System.Windows.Forms.TextBox itemIDTxtbox;
+        private System.Windows.Forms.TextBox revTxtbox;
     }
 }
 
