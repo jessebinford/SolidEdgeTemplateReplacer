@@ -46,6 +46,17 @@ namespace SolidEdgeTemplateReplacer
                 // Paste our copied background into the target doc/sheet
                 TargetDocument.SEDocumentInstance.Activate();
                 (SEAppObj.ActiveWindow as dynamic).Paste();
+
+                if (TargetDocument.ResetToSheetOneOnFinish)
+                {
+                    // Reset the target document to sheet 1
+                    try
+                    {
+                        (TargetDocument.SEDocumentInstance as SolidEdgeDraft.DraftDocument).Sections.WorkingSection.Sheets.Item(1).Activate();
+                    }
+                    catch
+                    { }
+                }
             }
 
             CustomEvents.OnProgressChanged("Replacement done!");

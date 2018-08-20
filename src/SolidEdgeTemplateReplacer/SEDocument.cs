@@ -27,19 +27,22 @@ namespace SolidEdgeTemplateReplacer
 
         // Used for SEEC Mode
         internal string RevID { get; set; }
+        
+        internal SolidEdgeDocument SEDocumentInstance { get; set; }
+
+        internal List<Sheet> BackgroundDocumentSheets { get; set; }
+
+        internal bool ResetToSheetOneOnFinish = false;
+
+        private bool _closeOnDispose;
+        private bool _saveDocOnClose;
+
 
         // Used for display purposes in a couple screens
         public string CombinedListingName
         {
             get { return $"File: {FileName}   |   File Path: {FullFilePath}"; }
         }
-        
-        internal SolidEdgeDocument SEDocumentInstance { get; set; }
-
-        internal List<Sheet> BackgroundDocumentSheets { get; set; }
-
-        private bool _closeOnDispose;
-        private bool _saveDocOnClose;
 
         public void Dispose()
         {

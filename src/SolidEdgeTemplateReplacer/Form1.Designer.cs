@@ -53,6 +53,7 @@
             this.revLbl = new System.Windows.Forms.Label();
             this.itemIDTxtbox = new System.Windows.Forms.TextBox();
             this.revTxtbox = new System.Windows.Forms.TextBox();
+            this.resetSheet1Chkbox = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -140,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 138);
+            this.label2.Location = new System.Drawing.Point(46, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 7;
@@ -148,7 +149,7 @@
             // 
             // templateFileTextBox
             // 
-            this.templateFileTextBox.Location = new System.Drawing.Point(106, 135);
+            this.templateFileTextBox.Location = new System.Drawing.Point(106, 160);
             this.templateFileTextBox.Name = "templateFileTextBox";
             this.templateFileTextBox.Size = new System.Drawing.Size(213, 20);
             this.templateFileTextBox.TabIndex = 6;
@@ -165,7 +166,7 @@
             // 
             // templateFileBtn
             // 
-            this.templateFileBtn.Location = new System.Drawing.Point(325, 133);
+            this.templateFileBtn.Location = new System.Drawing.Point(325, 158);
             this.templateFileBtn.Name = "templateFileBtn";
             this.templateFileBtn.Size = new System.Drawing.Size(52, 23);
             this.templateFileBtn.TabIndex = 10;
@@ -176,7 +177,7 @@
             // leaveTempOpenChkBox
             // 
             this.leaveTempOpenChkBox.AutoSize = true;
-            this.leaveTempOpenChkBox.Location = new System.Drawing.Point(106, 184);
+            this.leaveTempOpenChkBox.Location = new System.Drawing.Point(106, 209);
             this.leaveTempOpenChkBox.Name = "leaveTempOpenChkBox";
             this.leaveTempOpenChkBox.Size = new System.Drawing.Size(157, 17);
             this.leaveTempOpenChkBox.TabIndex = 12;
@@ -187,7 +188,7 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Enabled = false;
-            this.checkBox3.Location = new System.Drawing.Point(106, 161);
+            this.checkBox3.Location = new System.Drawing.Point(106, 186);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(144, 17);
             this.checkBox3.TabIndex = 11;
@@ -220,6 +221,8 @@
             // clearLogChkbox
             // 
             this.clearLogChkbox.AutoSize = true;
+            this.clearLogChkbox.Checked = true;
+            this.clearLogChkbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.clearLogChkbox.Location = new System.Drawing.Point(15, 278);
             this.clearLogChkbox.Name = "clearLogChkbox";
             this.clearLogChkbox.Size = new System.Drawing.Size(109, 17);
@@ -264,7 +267,7 @@
             // itemIDLbl
             // 
             this.itemIDLbl.AutoSize = true;
-            this.itemIDLbl.Location = new System.Drawing.Point(106, 138);
+            this.itemIDLbl.Location = new System.Drawing.Point(106, 163);
             this.itemIDLbl.Name = "itemIDLbl";
             this.itemIDLbl.Size = new System.Drawing.Size(44, 13);
             this.itemIDLbl.TabIndex = 17;
@@ -274,7 +277,7 @@
             // revLbl
             // 
             this.revLbl.AutoSize = true;
-            this.revLbl.Location = new System.Drawing.Point(278, 138);
+            this.revLbl.Location = new System.Drawing.Point(278, 163);
             this.revLbl.Name = "revLbl";
             this.revLbl.Size = new System.Drawing.Size(30, 13);
             this.revLbl.TabIndex = 18;
@@ -283,7 +286,7 @@
             // 
             // itemIDTxtbox
             // 
-            this.itemIDTxtbox.Location = new System.Drawing.Point(156, 135);
+            this.itemIDTxtbox.Location = new System.Drawing.Point(156, 160);
             this.itemIDTxtbox.Name = "itemIDTxtbox";
             this.itemIDTxtbox.Size = new System.Drawing.Size(114, 20);
             this.itemIDTxtbox.TabIndex = 7;
@@ -291,17 +294,30 @@
             // 
             // revTxtbox
             // 
-            this.revTxtbox.Location = new System.Drawing.Point(314, 135);
+            this.revTxtbox.Location = new System.Drawing.Point(314, 160);
             this.revTxtbox.Name = "revTxtbox";
             this.revTxtbox.Size = new System.Drawing.Size(48, 20);
             this.revTxtbox.TabIndex = 8;
             this.revTxtbox.Visible = false;
+            // 
+            // resetSheet1Chkbox
+            // 
+            this.resetSheet1Chkbox.AutoSize = true;
+            this.resetSheet1Chkbox.Checked = true;
+            this.resetSheet1Chkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.resetSheet1Chkbox.Location = new System.Drawing.Point(106, 135);
+            this.resetSheet1Chkbox.Name = "resetSheet1Chkbox";
+            this.resetSheet1Chkbox.Size = new System.Drawing.Size(139, 17);
+            this.resetSheet1Chkbox.TabIndex = 19;
+            this.resetSheet1Chkbox.Text = "Set to Sheet 1 on Finish";
+            this.resetSheet1Chkbox.UseVisualStyleBackColor = true;
             // 
             // frmTemplateReplacer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 430);
+            this.Controls.Add(this.resetSheet1Chkbox);
             this.Controls.Add(this.revTxtbox);
             this.Controls.Add(this.itemIDTxtbox);
             this.Controls.Add(this.revLbl);
@@ -365,6 +381,7 @@
         private System.Windows.Forms.Label revLbl;
         private System.Windows.Forms.TextBox itemIDTxtbox;
         private System.Windows.Forms.TextBox revTxtbox;
+        private System.Windows.Forms.CheckBox resetSheet1Chkbox;
     }
 }
 
