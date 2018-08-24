@@ -13,7 +13,7 @@ In this mode the user specifies the ItemID and Rev for the template draft inside
 <hr/>
 During the sheet replacement, the user will be prompted to select a template background sheet for each background sheet in the target document. The user has the option to NOT replace a background sheet with a template if they so choose.<br/><br/>
 Latest Build Download:<br/>
-https://github.com/jrbinford/SolidEdgeTemplateReplacer/releases/download/1.0/Solid.Edge.Template.Replacer.zip
+https://github.com/jrbinford/SolidEdgeTemplateReplacer/releases/download/1.0.0.1/Solid.Edge.Template.Replacer.zip
 <br/><br/>
 This application was built on ST10 interops, and has been tested on ST9 and ST10.<br/><br/>
 This project uses SolidEdge Community for interops and application calls.<br/>
