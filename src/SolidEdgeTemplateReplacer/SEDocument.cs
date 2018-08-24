@@ -32,8 +32,6 @@ namespace SolidEdgeTemplateReplacer
 
         internal List<Sheet> BackgroundDocumentSheets { get; set; }
 
-        internal bool ResetToSheetOneOnFinish = false;
-
         private bool _closeOnDispose;
         private bool _saveDocOnClose;
 

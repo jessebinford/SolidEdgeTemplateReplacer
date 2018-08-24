@@ -47,7 +47,7 @@ namespace SolidEdgeTemplateReplacer
                 TargetDocument.SEDocumentInstance.Activate();
                 (SEAppObj.ActiveWindow as dynamic).Paste();
 
-                if (TargetDocument.ResetToSheetOneOnFinish)
+                if (ReplacementSettings.ResetTargetDraftToPageOneOnClose)
                 {
                     // Reset the target document to sheet 1
                     try

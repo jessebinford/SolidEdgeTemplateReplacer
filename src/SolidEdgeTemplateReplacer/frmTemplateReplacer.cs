@@ -42,6 +42,9 @@ namespace SolidEdgeTemplateReplacer
                 richTextBox1.Text = "";
 
 
+            ReplacementSettings.ResetTargetDraftToPageOneOnClose = resetSheet1Chkbox.Checked;
+
+
             using (SolidEdgeApplicationController _ac = new SolidEdgeApplicationController())
             {
                 _ac.LoadSolidEdgeApplication(!fileAlreadyOpenChkBox.Checked);
@@ -54,7 +57,7 @@ namespace SolidEdgeTemplateReplacer
 
                 if (seecRadio.Checked)
                 {
-                    using (SEDocument _targetDoc = new SEDocument(string.Empty, false, false) { ResetToSheetOneOnFinish = resetSheet1Chkbox.Checked })
+                    using (SEDocument _targetDoc = new SEDocument(string.Empty, false, false))
                     using (SEDocument _templateDoc = new SEDocument(string.Empty, !leaveTempOpenChkBox.Checked, false) { ItemID = itemIDTxtbox.Text, RevID = revTxtbox.Text})
                     {
                         try
@@ -70,7 +73,7 @@ namespace SolidEdgeTemplateReplacer
 
                 if (unmanagedRadio.Checked)
                 {
-                    using (SEDocument _targetDoc = new SEDocument(targetFileTextbox.Text, false, false) { ResetToSheetOneOnFinish = resetSheet1Chkbox.Checked })
+                    using (SEDocument _targetDoc = new SEDocument(targetFileTextbox.Text, false, false))
                     using (SEDocument _templateDoc = new SEDocument(templateFileTextBox.Text, !leaveTempOpenChkBox.Checked, false))
                     {
                         try

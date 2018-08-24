@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplacementSettings.cs" />
     <Compile Include="SEDocument.cs" />
     <Compile Include="SEECController.cs" />
     <Compile Include="SheetReplacement.cs" />
